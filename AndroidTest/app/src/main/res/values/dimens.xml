@@ -3,6 +3,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!-- Standard Container margins -->
+    <dimen name="container_horizontal_margin">30dp</dimen>
+
+    <!-- Linear Layout -->
+    <dimen name="layout_top_margin">214dp</dimen>
+
     <!-- Text Sizes -->
-    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_height">55dp</dimen>
+    <dimen name="button_image_padding">16dp</dimen>
+    <dimen name="button_horizontal_padding">22dp</dimen>
+    <dimen name="button_spacer">24dp</dimen>
 </resources>

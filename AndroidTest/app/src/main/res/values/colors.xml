@@ -6,4 +6,8 @@
     <color name="background">#F9F9F9</color>
     <color name="button_blue">#0E5C89</color>
     <color name="chat_text">#1B1E1F</color>
+    <!--  Custom Colors  -->
+    <color name="white">#FFFFFF</color>
+    <color name="chat_username">#1B1E1F</color>
+    <color name="hint_field_text">#5F6063</color>
 </resources>

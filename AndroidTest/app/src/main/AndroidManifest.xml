@@ -16,9 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".chat.ChatActivity" />
-        <activity android:name=".animation.AnimationActivity"/>
-        <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".chat.ChatActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".animation.AnimationActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".login.LoginActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
