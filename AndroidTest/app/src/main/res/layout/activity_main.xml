@@ -9,48 +9,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginLeft="@dimen/container_horizontal_margin"
         android:layout_marginRight="@dimen/container_horizontal_margin"
-        android:layout_marginTop="@dimen/layout_top_margin">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
-            android:onClick="onChatClicked"
-            android:text="@string/chat_button"
-            android:textSize="@dimen/button_text_size"
             android:drawableStart="@drawable/ic_chat"
             android:drawablePadding="@dimen/button_image_padding"
             android:gravity="start|center_vertical"
+            android:onClick="onChatClicked"
             android:paddingStart="@dimen/button_horizontal_padding"
-            android:paddingEnd="@dimen/button_horizontal_padding" />
+            android:paddingEnd="@dimen/button_horizontal_padding"
+            android:text="@string/chat_button"
+            android:textSize="@dimen/button_text_size"
+            android:alpha="0.8"
+            android:background="@drawable/rounded_button"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
-            android:onClick="onLoginClicked"
-            android:text="@string/login_button"
-            android:textSize="@dimen/button_text_size"
+            android:layout_marginTop="@dimen/button_spacer"
+            android:layout_marginBottom="@dimen/button_spacer"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="@dimen/button_image_padding"
             android:gravity="start|center_vertical"
+            android:onClick="onLoginClicked"
             android:paddingStart="@dimen/button_horizontal_padding"
             android:paddingEnd="@dimen/button_horizontal_padding"
-            android:layout_marginTop="@dimen/button_spacer"
-            android:layout_marginBottom="@dimen/button_spacer"/>
+            android:text="@string/login_button"
+            android:textSize="@dimen/button_text_size"
+            android:alpha="0.8"
+            android:background="@drawable/rounded_button"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
-            android:onClick="onAnimationClicked"
-            android:text="@string/animation_button"
-            android:textSize="@dimen/button_text_size"
             android:drawableStart="@drawable/ic_animation"
             android:drawablePadding="@dimen/button_image_padding"
             android:gravity="start|center_vertical"
+            android:onClick="onAnimationClicked"
             android:paddingStart="@dimen/button_horizontal_padding"
-            android:paddingEnd="@dimen/button_horizontal_padding"/>
+            android:paddingEnd="@dimen/button_horizontal_padding"
+            android:text="@string/animation_button"
+            android:textSize="@dimen/button_text_size"
+            android:alpha="0.8"
+            android:background="@drawable/rounded_button"/>
 
     </LinearLayout>
 
