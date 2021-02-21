@@ -137,6 +137,8 @@ public class LoginActivity extends AppCompatActivity {
                     builder.setPositiveButton(R.string.alert_confirm, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             onBackPressed();
+                            // This is prevent unwanted backtracking to a previous session
+                            finish();
                         }
                     });
                     AlertDialog alertDialog = builder.create();

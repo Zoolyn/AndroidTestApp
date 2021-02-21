@@ -2,6 +2,7 @@ package com.datechnologies.androidtest;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,16 +25,28 @@ public class SplashScreen extends AppCompatActivity {
         // Unpack the bundle to find out which screen is next
         Bundle b = new Bundle();
         b = getIntent().getExtras();
-        String activity = b.getString("activity");
+        String activity = "";
+        if(b != null){
+            activity = b.getString("activity");
+        }
 
-        String screen = activity;
-        switch (screen) {
+        // Was implemented to try to account for multiple screens that may have need to the splash screen for loading times, such as the chat screen
+        switch (activity) {
             case "Chat":
                 //Log.d("Chat", "Start of getting data for chat");
                 new fetchChatData(SplashScreen.this).execute();
                 break;
             default:
-                Log.d("Nothing","There was no page");
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 3000);
+                break;
         }
 
     }
