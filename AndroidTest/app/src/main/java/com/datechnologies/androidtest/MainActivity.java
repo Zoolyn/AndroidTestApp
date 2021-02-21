@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, SplashScreen.class);
         intent.putExtra("activity", "Chat");
         startActivity(intent);
-        //ChatActivity.start(this);
     }
 
     public void onLoginClicked(View v)

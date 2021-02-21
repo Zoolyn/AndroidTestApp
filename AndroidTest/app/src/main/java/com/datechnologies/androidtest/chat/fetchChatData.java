@@ -29,6 +29,7 @@ public class fetchChatData extends AsyncTask<Void, Void, Void> {
     Context context;
     ArrayList<String> messages = new ArrayList<>();
     ArrayList<String> names = new ArrayList<>();
+    ArrayList<String> avatar_urls = new ArrayList<>();
 
     public fetchChatData(Context context) {
         this.context = context.getApplicationContext();
@@ -60,7 +61,8 @@ public class fetchChatData extends AsyncTask<Void, Void, Void> {
                 String message = d.getString("message");
                 messages.add(message);
                 names.add(name);
-                Log.d("data",name + ": " + message);
+                avatar_urls.add(avatar_url);
+                //Log.d("data",name + ": " + message);
             }
 
         } catch (MalformedURLException e) {
@@ -85,6 +87,7 @@ public class fetchChatData extends AsyncTask<Void, Void, Void> {
         Intent i = new Intent(context, ChatActivity.class);
         i.putExtra("messages", messages);
         i.putExtra("names", names);
+        i.putExtra("avatar_urls",avatar_urls);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); context.startActivity(i);
         context.startActivity(i);
     }

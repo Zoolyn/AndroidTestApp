@@ -69,13 +69,14 @@ public class ChatActivity extends AppCompatActivity {
         b = getIntent().getExtras();
         ArrayList<String> messages = b.getStringArrayList("messages");
         ArrayList<String> names = b.getStringArrayList("names");
+        ArrayList<String> avatar_urls = b.getStringArrayList("avatar_urls");
+
 
         for (int i = 0; i < messages.size(); i++) {
             ChatLogMessageModel chatLogMessageModel = new ChatLogMessageModel();
 
             chatLogMessageModel.message = messages.get(i);
-            Log.d("message",messages.get(i));
-            chatLogMessageModel.avatarUrl = "http://dev.rapptrlabs.com/Tests/images/drew_avatar.png";
+            chatLogMessageModel.avatarUrl = avatar_urls.get(i);
             chatLogMessageModel.username = names.get(i);
             tempList.add(chatLogMessageModel);
         }

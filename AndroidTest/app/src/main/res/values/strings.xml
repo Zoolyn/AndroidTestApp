@@ -14,4 +14,5 @@
     <!-- Login Strings -->
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
+    <string name="alert_confirm">OK</string>
 </resources>

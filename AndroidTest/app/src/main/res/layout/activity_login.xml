@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/login_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -54,7 +54,6 @@
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/custom_ripple_blue"
-            android:onClick="onClick"
             android:text="Login"
             android:textColor="@color/white"
             android:textStyle="bold"

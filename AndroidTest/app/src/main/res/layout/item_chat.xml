@@ -2,38 +2,46 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="?android:selectableItemBackground"
-              android:gravity="center_vertical"
-              android:orientation="horizontal"
-              android:layout_marginTop="16dp"
-              tools:background="@color/background"
-              tools:ignore="UseCompoundDrawables">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="?android:selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:background="@color/background"
+    tools:ignore="UseCompoundDrawables">
 
-    <ImageView
-        android:id="@+id/avatarImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
         android:layout_marginStart="16dp"
-        android:src="@drawable/ic_avatar_placeholder"
+        android:layout_marginEnd="7dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/messageTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlHardcoded" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/chat_icon"
+            app:srcCompat="@drawable/ic_avatar_placeholder" />
+    </android.support.v7.widget.CardView>
 
     <TextView
         android:id="@+id/messageTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/bubble"
         android:padding="8dp"
         android:textColor="@color/chat_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/nameTextView"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pharetra, sapien at luctus semper, justo dui accumsan lorem, nec pretium dui eros pharetra leo." />
 
@@ -45,7 +53,7 @@
         android:text="@string/chat_name"
         android:textColor="@color/chat_username"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
