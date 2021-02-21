@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -33,8 +34,10 @@ public class AnimationActivity extends AppCompatActivity {
     //==============================================================================================
 
     ImageView image;
+    Button button;
     private android.widget.RelativeLayout.LayoutParams layoutParams;
     String msg = "test";
+    boolean visable = false;
 
     //==============================================================================================
     // Class Properties
@@ -87,6 +90,15 @@ public class AnimationActivity extends AppCompatActivity {
     }
     public void onClick(View view){
         image = findViewById(R.id.animation_image);
-        image.animate().alpha(1).setDuration(3000).start();
+        button = findViewById(R.id.animation_button);
+        if(visable){
+            image.animate().alpha(0).setDuration(3000).start();
+            button.setText(R.string.fade_in_button);
+            visable = false;
+        } else {
+            image.animate().alpha(1).setDuration(3000).start();
+            button.setText(R.string.fade_out_button);
+            visable = true;
+        }
     }
 }
