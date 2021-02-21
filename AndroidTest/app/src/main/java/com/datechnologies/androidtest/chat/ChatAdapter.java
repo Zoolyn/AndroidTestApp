@@ -65,6 +65,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
         ChatLogMessageModel chatLogMessageModel = chatLogMessageModelList.get(position);
 
         viewHolder.messageTextView.setText(chatLogMessageModel.message);
+        viewHolder.nameTextView.setText(chatLogMessageModel.username);
     }
 
     @Override
@@ -81,12 +82,14 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     {
         ImageView avatarImageView;
         TextView messageTextView;
+        TextView nameTextView;
 
         public ChatViewHolder(View view)
         {
             super(view);
             avatarImageView = (ImageView)view.findViewById(R.id.avatarImageView);
             messageTextView = (TextView)view.findViewById(R.id.messageTextView);
+            nameTextView = (TextView)view.findViewById(R.id.nameTextView);
         }
     }
 

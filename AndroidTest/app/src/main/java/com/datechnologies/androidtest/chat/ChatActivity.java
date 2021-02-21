@@ -13,14 +13,6 @@ import com.datechnologies.androidtest.MainActivity;
 import com.datechnologies.androidtest.R;
 import com.datechnologies.androidtest.api.ChatLogMessageModel;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,17 +64,21 @@ public class ChatActivity extends AppCompatActivity {
 
         List<ChatLogMessageModel> tempList = new ArrayList<>();
 
-        ChatLogMessageModel chatLogMessageModel = new ChatLogMessageModel();
-        chatLogMessageModel.message = "This is test data. Please retrieve real data.";
+        // Fetch data
+        Bundle b = new Bundle();
+        b = getIntent().getExtras();
+        ArrayList<String> messages = b.getStringArrayList("messages");
+        ArrayList<String> names = b.getStringArrayList("names");
 
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
-        tempList.add(chatLogMessageModel);
+        for (int i = 0; i < messages.size(); i++) {
+            ChatLogMessageModel chatLogMessageModel = new ChatLogMessageModel();
+
+            chatLogMessageModel.message = messages.get(i);
+            Log.d("message",messages.get(i));
+            chatLogMessageModel.avatarUrl = "http://dev.rapptrlabs.com/Tests/images/drew_avatar.png";
+            chatLogMessageModel.username = names.get(i);
+            tempList.add(chatLogMessageModel);
+        }
 
         chatAdapter.setChatLogMessageModelList(tempList);
 

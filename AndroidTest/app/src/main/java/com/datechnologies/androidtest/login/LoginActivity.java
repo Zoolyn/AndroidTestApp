@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 
 import com.datechnologies.androidtest.MainActivity;
 import com.datechnologies.androidtest.R;
@@ -63,5 +66,16 @@ public class LoginActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    public void onClick(View view) {
+        String email = "";
+        String password = "";
+        EditText emailTextField = (EditText)findViewById(R.id.editTextTextEmailAddress);
+        EditText passwordTextField = (EditText)findViewById(R.id.editTextTextPassword);
+
+        email = emailTextField.getText().toString();
+        password = passwordTextField.getText().toString();
+
+        Log.d("test", email + "," + password);
     }
 }

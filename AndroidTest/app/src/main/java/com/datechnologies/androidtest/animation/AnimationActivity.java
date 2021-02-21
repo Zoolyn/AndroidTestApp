@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.datechnologies.androidtest.MainActivity;
 import com.datechnologies.androidtest.R;
@@ -61,5 +64,10 @@ public class AnimationActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    public void onClick(View view){
+        ImageView image;
+        image = findViewById(R.id.animation_image);
+        image.animate().alpha(1).setDuration(3000).start();
     }
 }

@@ -1,5 +1,7 @@
 package com.datechnologies.androidtest;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.View;
 import com.datechnologies.androidtest.animation.AnimationActivity;
 import com.datechnologies.androidtest.chat.ChatActivity;
 import com.datechnologies.androidtest.login.LoginActivity;
+import com.datechnologies.androidtest.SplashScreen;
 
 /**
  * The main screen that lets you navigate to all other screens in the app.
@@ -50,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onChatClicked(View v)
     {
-        ChatActivity.start(this);
+        Intent intent = new Intent(MainActivity.this, SplashScreen.class);
+        intent.putExtra("activity", "Chat");
+        startActivity(intent);
+        //ChatActivity.start(this);
     }
 
     public void onLoginClicked(View v)

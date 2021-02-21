@@ -6,5 +6,12 @@
     <string name="chat_button">CHAT</string>
     <string name="login_button">LOG IN</string>
     <string name="animation_button">ANIMATION</string>
-
+    <!-- Chat Strings -->
+    <string name="chat_icon">Chat Icon</string>
+    <string name="chat_name">Name</string>
+    <!-- Animation Strings -->
+    <string name="fade_in_button">FADE IN</string>
+    <!-- Login Strings -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
 </resources>
